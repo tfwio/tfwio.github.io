@@ -1,0 +1,57 @@
+<!DOCTYPE html><html><head><meta charSet="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="og:title" content="tfwio gh portal"/><meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/><meta name="description" content="t&#x27;s gh-page"/><title>NodeJS Typescript Blog Example (feat static export)</title><meta name="next-head-count" content="6"/><link rel="preload" href="/_next/static/css/e1aae4089c8a172bfab0.css" as="style"/><link rel="stylesheet" href="/_next/static/css/e1aae4089c8a172bfab0.css" data-n-g=""/><link rel="preload" href="/_next/static/css/b05242e4b00408ad4764.css" as="style"/><link rel="stylesheet" href="/_next/static/css/b05242e4b00408ad4764.css" data-n-p=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-a54b4f32bdc1ef890ddd.js"></script><script src="/_next/static/chunks/webpack-715970c8028b8d8e1f64.js" defer=""></script><script src="/_next/static/chunks/framework-fb2dd7aba3784ca05084.js" defer=""></script><script src="/_next/static/chunks/main-e20274533ffcaceb25a3.js" defer=""></script><script src="/_next/static/chunks/pages/_app-1d36d824d896e061d9aa.js" defer=""></script><script src="/_next/static/chunks/731-bdc98efabd35286ddca1.js" defer=""></script><script src="/_next/static/chunks/613-6c064b16955bd07c0136.js" defer=""></script><script src="/_next/static/chunks/pages/post/%5Bid%5D-b765f5a9ea975b14c7f1.js" defer=""></script><script src="/_next/static/rhPb6mjqX-UTFmnryxez6/_buildManifest.js" defer=""></script><script src="/_next/static/rhPb6mjqX-UTFmnryxez6/_ssgManifest.js" defer=""></script></head><body><div id="__next"><div class="layout_container__2qMMZ"><main><div class="MuiGrid-root layout_header__2gYxX layout_gridBoxGradient__149kS MuiGrid-container MuiGrid-direction-xs-column MuiGrid-align-items-xs-center MuiGrid-align-content-xs-center MuiGrid-justify-xs-center"><div class="MuiGrid-root MuiGrid-item" style="flex-grow:0;flex-shrink:1;padding:40px"><img src="/images/profile.tfwio.png" class="utils_borderCircle__3wtpX utils_post_entry_image__3KnV9" alt="thom f w"/></div><div class="MuiGrid-root MuiGrid-item"><div role="group" class="MuiButtonGroup-root MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-center MuiGrid-align-content-xs-center MuiGrid-justify-xs-center"><a class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiGrid-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiGrid-item MuiButton-containedSizeLarge MuiButton-sizeLarge" tabindex="0" aria-disabled="false" href="/"><span class="MuiButton-label">Home</span></a><a class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiGrid-root MuiButtonGroup-grouped MuiButtonGroup-groupedHorizontal MuiButtonGroup-groupedOutlined MuiButtonGroup-groupedOutlinedHorizontal MuiButtonGroup-groupedOutlined MuiGrid-item MuiButton-containedSizeLarge MuiButton-sizeLarge" tabindex="0" aria-disabled="false" href="/aboot"><span class="MuiButton-label">Aboot</span></a></div></div><div class="MuiGrid-root MuiGrid-item"><h1 class="MuiTypography-root utils_headingLg__eAWDr MuiTypography-h1 MuiTypography-alignCenter">thom f w</h1></div></div><div class="MuiContainer-root MuiContainer-maxWidthLg" style="min-height:100VH"><div class="MuiChip-root MuiChip-outlined"><span class="MuiChip-label">node-ts-blog</span></div><article><h1 class="utils_headingXl__3KDR9">NodeJS Typescript Blog Example (feat static export)</h1><div class="utils_lightText__1RuBE"><time dateTime="2021-01-01">January 1, 2021</time></div><div><p>So am using a particular nextjs example upgraded to Typescript
+with a few select added things.</p>
+<p>Generally we just follow the provided NextJS tutorial on converting
+a provided example into a Typesript project.</p>
+<p>All the following steps are taken from the tutorial.</p>
+<blockquote>
+<p>note: This is really easy getting to work with Typescript, though
+"out of the box" it doesn't play nicely with Material-UI.</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>Download Starter Code</strong></p>
+<pre><code class="language-bash">npx create-next-app nextjs-blog --use-npm --example "https://github.com/vercel/next-learn-starter/tree/master/basics-final"
+</code></pre>
+</li>
+<li>
+<p><strong>Create tsconfig.json</strong><br>
+Yeah.  this easy.  Its generated in our next step when you call on node or yarn.</p>
+<pre><code class="language-bash">touch tsconfig.json
+</code></pre>
+</li>
+<li>
+<p><strong>Rename</strong> all the *<strong>.js</strong> files *<strong>.tsx</strong>.</p>
+</li>
+<li>
+<p><strong>OPTIONAL PART APPLIED TO THIS SOURCE CODE REPOSITORY</strong><br>
+Now what I did at this point is move things like moving all the directories: components, lib and styles
+into a new <code>./sources</code> directory and make sure everything refactored nicely.</p>
+<p>As long as <strong><em>your</em></strong> happy is all that matters.  If you clone this repository, you're getting
+the <code>./sources</code> directory, otherwise following the steps described here this is abbsolutely optional.</p>
+</li>
+<li>
+<p><strong>Clean up whatever breaks EXPORTing</strong><br>
+Luckily the starter just uses <code>next/image</code> or a custom <strong>Image</strong> <em>Component</em> and all I had to do was find the two
+of them and convert them into standard images in order to provide working exports.<br>
+Using your IDE or editor (Visual Studio Code or what-not) find the 'Image' tags as used in layout.ts</p>
+<p>If you don't fix the images, <strong>next EXPORT</strong> fails.</p>
+</li>
+<li>
+<p>At this point we can just call <strong>Yarn</strong> or <strong>NPM</strong> from the (git root) or working directory.</p>
+<pre><code class="language-bash">yarn
+-- or --
+npx
+</code></pre>
+</li>
+</ol>
+<!-- https://www.astrotheme.com/ -->
+<h2>A little more information about our configuration</h2>
+<ul>
+<li><a href="https://github.com/gnab/remark/wiki">Remark</a> is used to provide Markdown to our NextJS/Typescript cofig here.
+<ul>
+<li><a href="https://github.com/jonschlinkert/gray-matter">gray-matter</a></li>
+</ul>
+</li>
+<li><a href="https://material-ui.com/">material-ui.com</a></li>
+</ul>
+</div></article><div class="layout_backToHome__Gwi-l"><a class="MuiButtonBase-root MuiButton-root MuiButton-text" tabindex="0" aria-disabled="false" href="/"><span class="MuiButton-label"><a>← Back to home</a></span></a></div></div></main></div><span style="min-height:30vh"></span></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"postData":{"tags":["node-ts-blog"],"id":"t-nodejs-ts-example","contentHtml":"\u003cp\u003eSo am using a particular nextjs example upgraded to Typescript\nwith a few select added things.\u003c/p\u003e\n\u003cp\u003eGenerally we just follow the provided NextJS tutorial on converting\na provided example into a Typesript project.\u003c/p\u003e\n\u003cp\u003eAll the following steps are taken from the tutorial.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003enote: This is really easy getting to work with Typescript, though\n\"out of the box\" it doesn't play nicely with Material-UI.\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eDownload Starter Code\u003c/strong\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003enpx create-next-app nextjs-blog --use-npm --example \"https://github.com/vercel/next-learn-starter/tree/master/basics-final\"\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eCreate tsconfig.json\u003c/strong\u003e\u003cbr\u003e\nYeah.  this easy.  Its generated in our next step when you call on node or yarn.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003etouch tsconfig.json\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eRename\u003c/strong\u003e all the *\u003cstrong\u003e.js\u003c/strong\u003e files *\u003cstrong\u003e.tsx\u003c/strong\u003e.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eOPTIONAL PART APPLIED TO THIS SOURCE CODE REPOSITORY\u003c/strong\u003e\u003cbr\u003e\nNow what I did at this point is move things like moving all the directories: components, lib and styles\ninto a new \u003ccode\u003e./sources\u003c/code\u003e directory and make sure everything refactored nicely.\u003c/p\u003e\n\u003cp\u003eAs long as \u003cstrong\u003e\u003cem\u003eyour\u003c/em\u003e\u003c/strong\u003e happy is all that matters.  If you clone this repository, you're getting\nthe \u003ccode\u003e./sources\u003c/code\u003e directory, otherwise following the steps described here this is abbsolutely optional.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003eClean up whatever breaks EXPORTing\u003c/strong\u003e\u003cbr\u003e\nLuckily the starter just uses \u003ccode\u003enext/image\u003c/code\u003e or a custom \u003cstrong\u003eImage\u003c/strong\u003e \u003cem\u003eComponent\u003c/em\u003e and all I had to do was find the two\nof them and convert them into standard images in order to provide working exports.\u003cbr\u003e\nUsing your IDE or editor (Visual Studio Code or what-not) find the 'Image' tags as used in layout.ts\u003c/p\u003e\n\u003cp\u003eIf you don't fix the images, \u003cstrong\u003enext EXPORT\u003c/strong\u003e fails.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eAt this point we can just call \u003cstrong\u003eYarn\u003c/strong\u003e or \u003cstrong\u003eNPM\u003c/strong\u003e from the (git root) or working directory.\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"language-bash\"\u003eyarn\n-- or --\nnpx\n\u003c/code\u003e\u003c/pre\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003c!-- https://www.astrotheme.com/ --\u003e\n\u003ch2\u003eA little more information about our configuration\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://github.com/gnab/remark/wiki\"\u003eRemark\u003c/a\u003e is used to provide Markdown to our NextJS/Typescript cofig here.\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\"https://github.com/jonschlinkert/gray-matter\"\u003egray-matter\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003e\u003ca href=\"https://material-ui.com/\"\u003ematerial-ui.com\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n","title":"NodeJS Typescript Blog Example (feat static export)","date":"2021-01-01"}},"__N_SSG":true},"page":"/post/[id]","query":{"id":"t-nodejs-ts-example"},"buildId":"rhPb6mjqX-UTFmnryxez6","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
